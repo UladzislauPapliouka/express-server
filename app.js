@@ -9,16 +9,16 @@ app.options('*', cors());
 
 app.use(bodyParser.json())
 app.get('/', (req, res) => {
-    res.send("Hello, world!")
+  res.send("Hello, world!")
 })
 app.post(`/seobility`,(req, res) =>{
-    if(req.body.phone === "+7 (___) ___-__-__") {
-        res.status(400).send({status:"error", message: "Enter correct phone"})
-        return
-    }
-    res.status(200).send({status:"success", message:"Successful sending"})
+  if(req.body.phone === "+7 (___) ___-__-__") {
+    res.status(400).send({status:"error", message: "Enter correct phone"})
+    return
+  }
+  res.status(200).send({status:"success", message:"Successful sending"})
 })
 
 app.listen(APP_PORT, () => {
-    console.warn(`App listening on port ${APP_PORT}`)
+  console.warn(`App listening on port ${APP_PORT}`)
 })
